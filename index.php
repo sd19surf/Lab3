@@ -74,9 +74,8 @@ $originalQuote = "
         (When the rest of Heaven was blue)
         Of a demon in my view.";
 $replacedQuote = str_replace("we","me",$originalQuote);
-$positionQuote = array();
-$positionQuote[] = getAllPositions("t",$originalQuote); //array of all the positions
-
+$positionQuote[] = array();
+$positionQuote = getAllPositions("m",$originalQuote); //array of all the positions
 ?>
 
 <table border="1" padding=".5">
@@ -109,27 +108,80 @@ $positionQuote[] = getAllPositions("t",$originalQuote); //array of all the posit
 <br>
 <table border="1" padding="0.5">
  <tr>
-   <td><?php print $originalQuote;?></td>
-   <td><?php print $replacedQuote;?></td>
+   <td><center><strong>Original</strong></center><?php print $originalQuote;?></td>
+   <td><center><strong>Replaced "we" with "me"</strong></center><?php print $replacedQuote;?></td>
  </tr>
  <tr>
-   <td><?php foreach($positionQuote as &$value){
-	print "The Letter 't' was found at position $value \n";
+   <td><center><strong>The position of 'm'</strong></center><?php foreach($positionQuote as $value){
+	 echo "The letter 'm' was found at position: $value <br>";
 	}
        ?>
    </td>
-   <td></td>
+   <td><center><strong>Upper Case Original</strong></center><?php echo strtoupper($originalQuote);?></td>
  </tr>
 </table>
+<table>
+   <tr>
+     <td><strong>Number Increasing</strong><br>
+	<?php 
+	   $str="";
+	   for($i=1;$i<9;$i++){
+             $str = $str.$i."  ";
+		echo "$str <br>";
+	    }?>
+     </td>
+     <td align="left"><br><strong>Number Reduction</strong><br>
+	<?php 	   
+	   $x = 9;
+	   $y = 9;
+	     for ($i=0;$i<$x;$i++){
+	         for ($j=1;$j<$y;$j++){
+                   echo $j."  ";		  
+		  }
+		 $y--;
+		echo "<br>";
+		}
+	    ?>
+     </td>
+   </tr>
+   <tr>
+     <td align="right"><strong>Number Increasing</strong><br>
+	<?php 
+	   $str="";
+	   for($i=1;$i<9;$i++){
+             $str = $str.$i."  ";
+		echo "$str <br>";
+	    }?>
+     </td>
+     <td align="right"><br><strong>Number Reduction</strong><br>
+	<?php 	   
+	   $x = 9;
+	   $y = 9;
+	     for ($i=0;$i<$x;$i++){
+	         for ($j=1;$j<$y;$j++){
+                   echo $j."  ";		  
+		  }
+		 $y--;
+		echo "<br>";
+		}
+	    ?>
+     </td>
+   </tr>
+</table>
+
+
+
+
 </body>
 </html>
 <?php
   function getAllPositions($findString,$quote) {
     $offset = 0; 
+    $pos = 0;
     $positions = array();
-	while (($pos = stripos($findString,$quote,$offset))!== FALSE) {
-		$offset = $pos + 1;
+	while (($pos = stripos($quote,$findString,$pos))!== FALSE) {
 		$positions[] = $pos;
+		$pos = $pos + strlen($findString);
 	}
 	return $positions;
   }
