@@ -6,7 +6,7 @@
     <meta name="description" content="Discussion 3 example of a nested loop with html tables">
     <meta name="keywords" content="HTML,PHP">
     <meta name="author" content="John Delaney">
-    <meta name="subject" content="9/4/2017 FALL 2017 SDEV300">
+    <meta name="subject" content="9/10/2017 FALL 2017 SDEV300">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
@@ -82,6 +82,7 @@ $positionQuote = getAllPositions("t",$originalQuote); //array of all the positio
 ?>
 
 <div id="table1">
+<h3>Table 1 Geometric Calculations</h3>
 <table border="1" padding=".5">
   <tr>
 	<td align="center"><strong>Circle</strong><br>
@@ -112,6 +113,7 @@ $positionQuote = getAllPositions("t",$originalQuote); //array of all the positio
 <!-- table number 2 quotes and changes -->
 <br>
 <div id="table2">
+<h3>Table 2 Quote and Changes</h3>
 <table border="1" padding="0.5">
  <tr>
    <td><center><strong>Original</strong></center><?php print $originalQuote;?></td>
@@ -128,6 +130,7 @@ $positionQuote = getAllPositions("t",$originalQuote); //array of all the positio
 </table>
 </div>
 <div id="table3">
+<h3>Table 3 Number Sequence & Alignment</h3>
 <table>
    <tr>
      <td><strong>Increasing from the left</strong><br>
