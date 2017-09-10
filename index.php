@@ -187,8 +187,7 @@ $positionQuote = getAllPositions("t",$originalQuote); //array of all the positio
 </body>
 </html>
 <?php
-  function getAllPositions($findString,$quote) {
-    $offset = 0; 
+  function getAllPositions($findString,$quote) { 
     $pos = 0;
     $positions = array();
 	while (($pos = stripos($quote,$findString,$pos))!== FALSE) {
